@@ -4,7 +4,7 @@ from tensorflow.keras import Model
 
 from tensorflow.keras.applications.inception_v3 import InceptionV3
 
-local_weights_file = '/Users/subhadeep.deyashi/Desktop/program/ml/cats_and_dogs/tmp/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5'
+local_weights_file = '/tmp/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.h5'
 pre_trained_model = InceptionV3(
     input_shape=(150, 150, 3), include_top=False, weights=None)
 pre_trained_model.load_weights(local_weights_file)
@@ -40,13 +40,13 @@ import os
 import zipfile
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-local_zip = '/Users/subhadeep.deyashi/Desktop/program/ml/cats_and_dogs/tmp/cats_and_dogs_filtered.zip'
+local_zip = '/tmp/cats_and_dogs_filtered.zip'
 zip_ref = zipfile.ZipFile(local_zip, 'r')
-zip_ref.extractall('/Users/subhadeep.deyashi/Desktop/program/ml/cats_and_dogs/tmp')
+zip_ref.extractall('/tmp')
 zip_ref.close()
 
 # Define our example directories and files
-base_dir = '/Users/subhadeep.deyashi/Desktop/program/ml/cats_and_dogs/tmp/cats_and_dogs_filtered'
+base_dir = '/tmp/cats_and_dogs_filtered'
 train_dir = os.path.join(base_dir, 'train')
 validation_dir = os.path.join(base_dir, 'validation')
 
